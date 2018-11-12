@@ -5,7 +5,6 @@ services:
     hostname: srv5022
     domainname: srv02.jonasisaias.online
     restart: always
-    mem_limit: 500M
     networks: 
       - net-5022
     ports:
