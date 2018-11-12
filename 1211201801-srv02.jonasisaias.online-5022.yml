@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   srv02.jonasisaias.online:
     image: o2info/colab:v1 
