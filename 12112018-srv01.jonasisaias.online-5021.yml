@@ -1,0 +1,27 @@
+version: '2'
+services:
+  srv01.jonasisaias.online:
+    image: o2info/colab:v1 
+    hostname: srv5021
+    domainname: srv01.jonasisaias.online
+    restart: always
+    mem_limit: 500M
+    networks: 
+      - net-5021
+    ports:
+      - "5021:80"
+     
+    volumes:
+      - "/DADOS/srv01.jonasisaias.online/WWW/:/var/www/html/"
+      - "/DADOS/srv01.jonasisaias.online/BD/:/var/lib/mysql/"
+      - "/DADOS/srv01.jonasisaias.online/ETC/apache2/:/etc/apache2/"
+      - "/DADOS/srv01.jonasisaias.online/LOGS/apache2/:/var/log/apache2/"
+
+    environment:
+      VIRTUAL_HOST: srv01.jonasisaias.online
+      LOG_LEVEL: 'debug'
+
+networks:
+  net-5021:
+    external:
+      name: net-5021
